@@ -1,47 +1,3 @@
-'''
-原版本:
-ryKaraOkeInPygame.py
-
-2022/2/22
-已處理：get_wav_mic_array()分離, freq_process()分離
-2022/2/23
-已處理：score system 問題：分數放入self, 分數一直閃爍, 分數計算方式
-2022/2/24
-已處理：所有模組化
-需要處理： 按a後會卡住，收不到音(兩者)
-2022/3/17
-已處理：畫面速度
-2022/3/31
-需要處理：建database
-2022/4/27
-需要處理：背景播放mp4
-2022/4/28
-已處理：背景播放mp4
-需要處理：localfile撥放mp4
-2022/4/29
-已處理：localfile撥放mp4
-需要處理：沒影片的程式處理
-2022/5/3
-已處理：沒影片的程式處理
-需要處理：pitch問題，訓練歌聲偵測
-2022/6/3
-需要處理：先讀取wav檔的pitch
-2022/6/4
-需要處理：讀取wav檔的pitch會比音樂慢，撥放音樂的地方
-2022/6/7
-已處理：先讀取wav檔的pitch，黃圈對齊音樂，影片太慢
-
-2022/7/13
-需要處理：wav_pitch_array list out of range
-2022/8/8
-已增加：目前時間 / 總時長
-2022/8/9
-已處理：畫面配合影片縮放
-2022/8/12
-已處理：調整變數名稱，畫面
-2022/10/1
-已處理：code全英文
-'''
 import sys
 sys.path.insert(1, 'SVD_LRCN/')
 import pred
@@ -92,8 +48,6 @@ def note2freq(n=0):
     return f0
 
 def frequency_to_color(frequency, is_color= False):
-
-    #frequency *= 倍數
     
     if is_color == True:
         r, g, b= colorsys.hsv_to_rgb(frequency, 1, .9)#.999)#.8)
